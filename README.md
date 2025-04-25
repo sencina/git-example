@@ -120,3 +120,41 @@ Buenas prácticas con ramas
 - Hacé commits frecuentemente y con mensajes claros.
 
 - Antes de hacer merge, actualizá tu rama con pull.
+
+### Resolver Conflictos en un Merge
+
+A veces, cuando hacés un merge entre ramas, Git no puede decidir automáticamente qué cambios
+
+conservar.
+
+Esto se llama un "conflicto de merge".
+
+Pasos para resolver un conflicto:
+
+1. Git te va a mostrar qué archivos tienen conflictos.
+
+Podés verlos con:
+
+`git status`
+
+2. Abrí los archivos en conflicto. Vas a ver algo como esto:
+```
+<<<<<<< HEAD
+
+Código de tu rama actual
+
+=======
+
+Código de la rama que estás mergeando
+
+>>>>>>> feature/login
+```
+3. Editá el archivo y dejá solo el código que querés conservar.
+
+4. Una vez resueltos todos los conflictos, marcá los archivos como resueltos:
+`git add <archivo-resuelto>`
+
+5. Completá el merge con:
+`git commit`
+
+¡Listo! El conflicto está resuelto.
